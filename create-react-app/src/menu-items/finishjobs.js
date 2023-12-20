@@ -1,11 +1,7 @@
-
-// assets
-// import { IconBrandChrome, IconHelp } from '@tabler/icons';
-
-import {  IconCheck } from '@tabler/icons';
+import CheckCircleOutlinedIcon from '@mui/icons-material/CheckCircleOutlined';
 
 // constant
-const icons = {  IconCheck };
+const icons = {  CheckCircleOutlinedIcon  };
 
 
 const finishjobs = {
@@ -17,7 +13,7 @@ const finishjobs = {
         title: 'Finish Jobs',
         type: 'item',
         url: '/finish-jobs',
-        icon: icons.IconCheck,
+        icon: icons.CheckCircleOutlinedIcon ,
         breadcrumbs: false
       },
     ]

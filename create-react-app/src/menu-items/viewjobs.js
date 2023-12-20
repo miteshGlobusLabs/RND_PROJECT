@@ -1,9 +1,11 @@
 
 // assets
-import { IconBriefcase, IconPlus } from '@tabler/icons';
+
+
+import SourceOutlinedIcon from '@mui/icons-material/SourceOutlined';
 
 // constant
-const icons = {  IconBriefcase, IconPlus};
+const icons = {  SourceOutlinedIcon };
 
 
 const newjobs = {
@@ -15,7 +17,7 @@ const newjobs = {
         title: 'View Jobs ',
         type: 'item',
         url: '/view-jobs',
-        icon: icons.IconBriefcase,
+        icon: icons.SourceOutlinedIcon ,
         breadcrumbs: false
       },
      

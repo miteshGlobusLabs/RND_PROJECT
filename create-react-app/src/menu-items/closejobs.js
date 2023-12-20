@@ -2,10 +2,10 @@
 // assets
 // import { IconBrandChrome, IconHelp } from '@tabler/icons';
 
-import { IconX } from '@tabler/icons';
+import DoDisturbOnOutlinedIcon from '@mui/icons-material/DoDisturbOnOutlined';
 
 // constant
-const icons = { IconX };
+const icons = { DoDisturbOnOutlinedIcon};
 
 
 const closejobs = {
@@ -17,7 +17,7 @@ const closejobs = {
         title: 'Close Jobs',
         type: 'item',
         url: '/close-jobs',
-        icon: icons.IconX,
+        icon: icons.DoDisturbOnOutlinedIcon,
         breadcrumbs: false
       },
     ]

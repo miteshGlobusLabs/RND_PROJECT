@@ -2,10 +2,10 @@
 
 
 // assets
-import { IconCalendar } from '@tabler/icons';
+import AdminPanelSettingsOutlinedIcon from '@mui/icons-material/AdminPanelSettingsOutlined';
 
 // constant
-const icons = {IconCalendar };
+const icons = {AdminPanelSettingsOutlinedIcon };
 
 
 const viewjobsForAdmin = {
@@ -17,7 +17,7 @@ const viewjobsForAdmin = {
         title: 'View JobsForAdmin',
         type: 'item',
         url: '/view-jobsForAdmin',
-        icon: icons.IconCalendar,
+        icon: icons.AdminPanelSettingsOutlinedIcon ,
         breadcrumbs: false
       },
     ]

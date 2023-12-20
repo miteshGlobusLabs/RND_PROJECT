@@ -9,7 +9,7 @@ import {
   Avatar,
   Box,
   Card,
-  CardContent,
+ // CardContent,
   Chip,
   ClickAwayListener,
   Divider,
@@ -23,7 +23,7 @@ import {
   Paper,
   Popper,
   Stack,
-  Switch,
+ // Switch,
   Typography
 } from '@mui/material';
 
@@ -33,8 +33,8 @@ import PerfectScrollbar from 'react-perfect-scrollbar';
 // project imports
 import MainCard from 'ui-component/cards/MainCard';
 import Transitions from 'ui-component/extended/Transitions';
-import UpgradePlanCard from './UpgradePlanCard';
-import User1 from 'assets/images/users/user-round.svg';
+//import UpgradePlanCard from './UpgradePlanCard';
+//import User1 from 'assets/images/users/user-round.svg';
 
 // assets
 import { IconLogout, IconSearch, IconSettings, IconUser } from '@tabler/icons';
@@ -46,9 +46,9 @@ const ProfileSection = () => {
   const customization = useSelector((state) => state.customization);
   const navigate = useNavigate();
 
-  const [sdm, setSdm] = useState(true);
+  // const [sdm, setSdm] = useState(true);
   const [value, setValue] = useState('');
-  const [notification, setNotification] = useState(false);
+  // const [notification, setNotification] = useState(false);
   const [selectedIndex, setSelectedIndex] = useState(-1);
   const [open, setOpen] = useState(false);
   /**
@@ -110,18 +110,23 @@ const ProfileSection = () => {
           }
         }}
         icon={
+          // <Avatar
+          //   src={User1}
+          //   sx={{
+          //     ...theme.typography.mediumAvatar,
+          //     margin: '8px 0 8px 8px !important',
+          //     cursor: 'pointer'
+          //   }}
+          //   ref={anchorRef}
+          //   aria-controls={open ? 'menu-list-grow' : undefined}
+          //   aria-haspopup="true"
+          //   color="inherit"
+          // />
           <Avatar
-            src={User1}
-            sx={{
-              ...theme.typography.mediumAvatar,
-              margin: '8px 0 8px 8px !important',
-              cursor: 'pointer'
-            }}
-            ref={anchorRef}
-            aria-controls={open ? 'menu-list-grow' : undefined}
-            aria-haspopup="true"
-            color="inherit"
-          />
+           src="/broken-image.jpg"
+           sx={{width:'42px', backgroundColor:'#dce6ea'}}
+           
+           />
         }
         label={<IconSettings stroke={1.5} size="1.5rem" color={theme.palette.primary.main} />}
         variant="outlined"
@@ -157,9 +162,9 @@ const ProfileSection = () => {
                   <Box sx={{ p: 2 }}>
                     <Stack>
                       <Stack direction="row" spacing={0.5} alignItems="center">
-                        <Typography variant="h4">Good Morning,</Typography>
+                        {/* <Typography variant="h4">Good Morning,</Typography> */}
                         <Typography component="span" variant="h4" sx={{ fontWeight: 400 }}>
-                          Johne Doe
+                          RND
                         </Typography>
                       </Stack>
                       <Typography variant="subtitle2">Project Admin</Typography>
@@ -184,7 +189,7 @@ const ProfileSection = () => {
                   </Box>
                   <PerfectScrollbar style={{ height: '100%', maxHeight: 'calc(100vh - 250px)', overflowX: 'hidden' }}>
                     <Box sx={{ p: 2 }}>
-                      <UpgradePlanCard />
+                     {/* <UpgradePlanCard /> */}
                       <Divider />
                       <Card
                         sx={{
@@ -192,7 +197,7 @@ const ProfileSection = () => {
                           my: 2
                         }}
                       >
-                        <CardContent>
+                        {/* <CardContent>
                           <Grid container spacing={3} direction="column">
                             <Grid item>
                               <Grid item container alignItems="center" justifyContent="space-between">
@@ -226,7 +231,7 @@ const ProfileSection = () => {
                               </Grid>
                             </Grid>
                           </Grid>
-                        </CardContent>
+                        </CardContent> */}
                       </Card>
                       <Divider />
                       <List

@@ -17,7 +17,7 @@ import {
 } from '@mui/material';
 
 import CardForClose from './CardForClose';
-import KeyboardTabIcon from '@mui/icons-material/KeyboardTab';
+import ArrowCircleRightOutlinedIcon from '@mui/icons-material/ArrowCircleRightOutlined';
 
 const formatDateToDDMMYYYY = (dateString) => {
   const date = new Date(dateString);
@@ -186,9 +186,9 @@ const CloseJobs = () => {
                   />
                 </TableCell>
                 <TableCell>
-                  <KeyboardTabIcon
+                  <ArrowCircleRightOutlinedIcon
                     variant="contained"
-                    style={{ backgroundColor: '#15698c', color: 'white', cursor:'pointer', marginLeft:"10px" }}
+                    style={{ fontSize: '30px', color:'#065f85', cursor: 'pointer', marginLeft: '10px' }}
                     onClick={() => handleUpdated(item.JobNo, closingDates[item.JobNo])}
                   />
 

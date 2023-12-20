@@ -1,11 +1,8 @@
 
-// assets
-// import { IconBrandChrome, IconHelp } from '@tabler/icons';
-
-import {  IconCheck } from '@tabler/icons';
+import AssignmentOutlinedIcon from '@mui/icons-material/AssignmentOutlined';
 
 // constant
-const icons = {  IconCheck };
+const icons = {  AssignmentOutlinedIcon};
 
 
 const finaljobs = {
@@ -18,7 +15,7 @@ const finaljobs = {
         type: 'item',
         // url: '/final-jobs/:index',
         url: '/final-jobs/:JobNo',
-        icon: icons.IconCheck,
+        icon: icons.AssignmentOutlinedIcon,
         breadcrumbs: false
       },
     ]

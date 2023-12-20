@@ -1,26 +1,24 @@
-
 // assets
-import { IconBriefcase, IconPlus } from '@tabler/icons';
+import WorkOutlineOutlinedIcon from '@mui/icons-material/WorkOutlineOutlined';
+import AddIcon from '@mui/icons-material/Add';
 
 // constant
-const icons = {  IconBriefcase, IconPlus};
-
+const icons = { WorkOutlineOutlinedIcon, AddIcon };
 
 const newjobs = {
-    id: 'new-roadmap',
-    type: 'group',
-    children: [
-      {
-        id: 'new-page',
-        title: 'New Jobs ',
-        type: 'item',
-        url: '/new-jobs/',
-        icon: icons.IconBriefcase,
-        breadcrumbs: false
-      },
-     
-    ]
-  };
+  id: 'new-roadmap',
+  type: 'group',
+  children: [
+    {
+      id: 'new-page',
+      title: 'New Jobs',
+      type: 'item',
+      url: '/new-jobs/',
+      icon: icons.WorkOutlineOutlinedIcon, // Use MUI WorkOutlineOutlined icon
+      breadcrumbs: false
+    },
+    // Add more items if needed
+  ]
+};
 
-export default newjobs
-
+export default newjobs;
