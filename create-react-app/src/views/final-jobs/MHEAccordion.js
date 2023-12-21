@@ -151,7 +151,7 @@ const MHEAccordion = ({ expanded, onAccordionChange, setFormData, jobNo  }) => {
                   onChange={(e) => handleChange(e, index)}
                 />
               </Grid>
-              <Grid item xs={3} md={2}>
+              {/* <Grid item xs={3} md={2}>
                 <TextField
                   label="Vehicle Category"
                   fullWidth
@@ -160,7 +160,30 @@ const MHEAccordion = ({ expanded, onAccordionChange, setFormData, jobNo  }) => {
                   value={formData.VehicleCategory}
                   onChange={(e) => handleChange(e, index)}
                 />
+              </Grid> */}
+
+              <Grid item xs={6} md={2}>
+                <FormControl fullWidth variant="outlined">
+                  <InputLabel>Vehicle Category</InputLabel>
+                  <Select
+                    label="Vehicle Category"
+                    name="VehicleCategory"
+                    value={formData.VehicleCategory}
+                    onChange={(e) => handleChange(e, index)}
+                  >
+                    <MenuItem value="">Select</MenuItem>
+                    <MenuItem value="Option1">Crane</MenuItem>
+                   
+                  </Select>
+                </FormControl>
               </Grid>
+
+
+
+
+
+
+
               <Grid item xs={3} md={2}>
                 <FormControl fullWidth variant="outlined">
                   <InputLabel>VehicleType</InputLabel>
@@ -171,9 +194,9 @@ const MHEAccordion = ({ expanded, onAccordionChange, setFormData, jobNo  }) => {
                     onChange={(e) => handleChange(e, index)}
                   >
                     <MenuItem value="">Select</MenuItem>
-                    <MenuItem value="Option1">Option1</MenuItem>
-                    <MenuItem value="Option2">Option2</MenuItem>
-                    <MenuItem value="Option3">Option3</MenuItem>
+                    <MenuItem value="Option1">Crane</MenuItem>
+                    <MenuItem value="Option2">F15 Crane</MenuItem>
+                    {/* <MenuItem value="Option3">Option3</MenuItem> */}
                   </Select>
                 </FormControl>
               </Grid>

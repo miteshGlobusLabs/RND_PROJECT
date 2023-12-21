@@ -367,7 +367,7 @@ const NewJobs = () => {
           <Grid item xs={6}>
             <TextField
               label="Pickup Location | Address"
-              placeholder="Mr.Suleman"
+              placeholder=""
               fullWidth
               variant="outlined"
               name="PickupLocation" // Remove the extra space here

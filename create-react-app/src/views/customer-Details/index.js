@@ -6,7 +6,7 @@ import MainCard from 'ui-component/cards/MainCard';
 import EditDialog from './EditDialog';
 import DeleteConfirmationDialog from './DeleteConfirmationDialog';
 import DeleteIcon from '@mui/icons-material/Delete';
-import EditIcon from '@mui/icons-material/Edit';
+import EditNoteIcon from '@mui/icons-material/EditNote';
 
 const CustomerDetails = () => {
   const [data, setData] = useState([]);
@@ -116,7 +116,7 @@ const CustomerDetails = () => {
                   <TableCell>{customer.phone1}</TableCell>
                   <TableCell>{customer.contactPerson}</TableCell>
                   <TableCell>
-                    <EditIcon
+                    <EditNoteIcon
                       sx={{ color: 'black', cursor: 'pointer' }}
                       variant="contained"
                       onClick={() => handleEditClick(customer.customerCode)}

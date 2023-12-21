@@ -6,7 +6,7 @@ import { Box, Tabs, Tab, Container, Button, Table, TableHead, TableRow, TableCel
 import EditDialog from './EditDialog';
 import DeleteConfirmationDialog from './DeleteConfirmationDialog';
 import DeleteIcon from '@mui/icons-material/Delete';
-import EditIcon from '@mui/icons-material/Edit';
+import EditNoteIcon from '@mui/icons-material/EditNote';
 
 
 
@@ -191,7 +191,7 @@ const ViewJobs = () => {
                   <TableCell className='small-text'>{item.PickupLocation}</TableCell>
                   <TableCell className='small-text'>{item.DeliveryLocation}</TableCell>
                   <TableCell>
-                    <EditIcon
+                    <EditNoteIcon
                      variant="contained"
                      style={{color: 'black', cursor: 'pointer'  }}
                      onClick={() => handleEditClick(item.JobNo)}

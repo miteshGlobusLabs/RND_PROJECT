@@ -1,66 +1,7 @@
-
-
 const express = require('express');
 const db = require('../db');
 
 const router = express.Router();
-
-// // Define a POST route to insert data into the database
-// router.post('/', (req, res) => {
-//   const {
-//     JobNo,
-//     TransporterID,
-//     VehicleCategory,
-//     VehicleType,
-//     VehicleNo,
-//     DriverName,
-//     UoM,
-//     WOLineNo,
-//     TaskDate,
-//     BuyCost,
-//     TripCount,
-//   } = req.body;
-
-//   const sql = `
-//     INSERT INTO tbNewJobLogisticsDetails (
-//       JobNo,
-//       TransporterID,
-//       VehicleCategory,
-//       VehicleType,
-//       VehicleNo,
-//       DriverName,
-//       UoM,
-//       WOLineNo,
-//       TaskDate,
-//       BuyCost,
-//       TripCount
-//     ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
-//   `;
-
-//   const values = [
-//     JobNo,
-//     TransporterID,
-//     VehicleCategory,
-//     VehicleType,
-//     VehicleNo,
-//     DriverName,
-//     UoM,
-//     WOLineNo,
-//     TaskDate,
-//     BuyCost,
-//     TripCount,
-//   ];
-
-//   db.query(sql, values, (err, result) => {
-//     if (err) {
-//       console.error('MySQL query error:', err);
-//       res.status(500).json({ error: 'Internal Server Error' });
-//       return;
-//     }
-//     console.log('Data inserted successfully');
-//     res.status(201).json({ message: 'Data inserted successfully' });
-//   });
-// });
 
 
 router.post('/', (req, res) => {
@@ -94,6 +35,12 @@ router.post('/', (req, res) => {
     res.status(201).json({ message: 'Data inserted successfully' });
   });
 });
+
+
+
+
+
+
 
 
 

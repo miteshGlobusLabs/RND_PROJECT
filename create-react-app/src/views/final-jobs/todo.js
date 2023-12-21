@@ -3,20 +3,23 @@ import LogisticsAccordion from './LogisticsAccordion';
 import MHEAccordion from './MHEAccordion';
 import SpecialAccordion from './SpecialAccordion';
 import ManAccordion from './ManAccordion';
+import WorkAccordion from './WorkAccordion';
 import { useNavigate } from 'react-router';
 
 const Todo = ({ JobNo, handleSubmit }) => {
   const navigate = useNavigate();
-  const [logisticsExpanded, setLogisticsExpanded] = useState(true);
+  const [logisticsExpanded, setLogisticsExpanded] = useState(false);
   const [mheExpanded, setMheExpanded] = useState(false);
-  const [manExpanded, setmanExpanded] = useState(true);
-  const [specialExpanded, setspecialExpanded] = useState(true);
+  const [manExpanded, setmanExpanded] = useState(false);
+  const [specialExpanded, setspecialExpanded] = useState(false);
+  const [workOrderExpanded, setworkOrderExpanded] = useState(false);
 
   // const [activeAccordion, setActiveAccordion] = useState(null);
   const [logisticsFormData, setLogisticsFormData] = useState([]);
   const [mheFormData, setMheFormData] = useState([]);
   const [manPowerFormData, setManPowerFormData] = useState([]);
   const [specialFormData, setSpecialFormData] = useState([]);
+  const [workOrderFormData, setworkOrderFormData] = useState([]);
 
   const REACT_APP_API_URL = process.env.REACT_APP_API_URL;
 
@@ -36,11 +39,14 @@ const Todo = ({ JobNo, handleSubmit }) => {
     setspecialExpanded(!specialExpanded);
   };
 
+  const handleworkOrderAccordionChange = () => {
+    setworkOrderExpanded(!workOrderExpanded);
+  };
+
   const handleSubmitAllData = async () => {
     try {
-
       handleSubmit();
-     
+
       // Submit Logistics Data
       // const logisticsResponse = await fetch(`${REACT_APP_API_URL}api/logistics`, {
       //   method: 'POST',
@@ -126,8 +132,21 @@ const Todo = ({ JobNo, handleSubmit }) => {
       }
 
 
-      
-      
+
+      const workOrderResponse = await fetch(`${REACT_APP_API_URL}api/workOrder`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(workOrderFormData)
+      });
+
+      if (workOrderResponse.ok) {
+        console.log('work Order data submitted successfully');
+        setworkOrderFormData([]);
+      } else {
+        console.error('Failed to work data');
+      }
 
       navigate('/close-jobs');
       window.location.reload();
@@ -146,7 +165,7 @@ const Todo = ({ JobNo, handleSubmit }) => {
         formData={logisticsFormData}
         setFormData={setLogisticsFormData}
         jobNo={JobNo} // Pass the JobNo data here
-      />
+      />c
 
       {/* MHE Accordion */}
       <MHEAccordion
@@ -175,20 +194,31 @@ const Todo = ({ JobNo, handleSubmit }) => {
         jobNo={JobNo} // Pass the JobNo data here
       />
 
+      <WorkAccordion
+        expanded={workOrderExpanded}
+        onAccordionChange={handleworkOrderAccordionChange}
+        formData={workOrderFormData}
+        setFormData={setworkOrderFormData}
+        jobNo={JobNo} // Pass the JobNo data here
+      />
+
       <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
         <button
           onClick={handleSubmitAllData}
           style={{
+            marginBottom: '10px',
             backgroundColor: '#15698c',
-            color: 'white',
-            borderRadius: '4px',
+             color: 'white',
+            borderRadius: '6px',
+            fontFamily: 'sans-serif',
             marginTop: '5px',
-            padding: '10px 20px',
+            padding: '9px 20px',
             fontSize: '18px',
-            cursor: 'pointer'
+            cursor: 'pointer',
+            fontWeight: '600px'
           }}
         >
-          Submit Data
+          Submit
         </button>
       </div>
     </div>

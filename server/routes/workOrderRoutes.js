@@ -6,33 +6,42 @@ const router = express.Router();
 
 
 
+
 router.post('/', (req, res) => {
-  const manPowerData = req.body; // Assuming req.body is an array of objects
+  console.log('Incoming data:', req.body);
 
-  // Define the SQL query to insert multiple job ManPower details
+  const workOrder = req.body;
+
   const sql =
-    'INSERT INTO tbNewJobManPowerDetails (JobNo, ManPowerQty, TaskDate, BuyCost) VALUES ?';
+    'INSERT INTO tbWorkOrderDetails (JobNo, ServiceDescription, ServiceLineNo, UoM, ContractRate) VALUES ?';
 
-  // Convert the array of objects into a 2D array of values
-  const values = manPowerData.map((item) => [
+  const values = workOrder.map(item => [
     item.JobNo,
-    item.ManPowerQty,
-    item.TaskDate,
-    item.BuyCost,
+    item.ServiceDescription,
+    item.ServiceLineNo,
+    item.UoM,
+    item.ContractRate,
   ]);
+
+  console.log('Values to be inserted:', values);
 
   db.query(sql, [values], (err, result) => {
     if (err) {
       console.error('MySQL query error:', err);
       res.status(500).json({ error: 'Internal Server Error' });
-    } else {
-      console.log('Job ManPower details inserted:', result);
-      res
-        .status(201)
-        .json({ message: 'Job ManPower details inserted successfully' });
+      return;
     }
+
+    console.log('Data inserted successfully');
+    res.status(201).json({ message: 'Data inserted successfully' });
   });
-});
+})
+
+
+
+
+
+
 
 
 
@@ -43,7 +52,7 @@ router.get('/', (req, res) => {
   // const sql = 'SELECT * FROM tbNewJobManPowerDetails';
 
 
-  const sql = 'SELECT * FROM tbNewJobManPowerDetails';
+  const sql = 'SELECT * FROM tbWorkOrderDetails';
 
   // Execute the SQL query to retrieve ManPower detail data
   db.query(sql, (err, rows) => {

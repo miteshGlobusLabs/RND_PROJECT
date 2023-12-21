@@ -209,7 +209,7 @@ function ColumnChart() {
           <XAxis dataKey="category" />
           <YAxis
             domain={[0, 'auto']} // Set the minimum value to 0 and 'auto' for the maximum (automatically calculated)
-            ticks={[0, 1, 2, 3, 4]}   // Define custom tick values
+            ticks={[0, 1, 2, 3, 4,5,6,7,8,9,10]}   // Define custom tick values
           />
           <Tooltip />
           <Legend />
